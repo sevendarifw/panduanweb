@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Lengkap - Website Penyuluhan Pertanian Kabupaten Kebumen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .mockup-browser {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+        .mockup-browser-toolbar {
+            background: #f3f4f6;
+            padding: 8px 16px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .mockup-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .mockup-content {
+            padding: 16px;
+            min-height: 200px;
+        }
+        .step-number {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+        }
+        .success-box {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-left: 4px solid #10b981;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-600 to-green-700 text-white py-8">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold text-center mb-2">Panduan Lengkap</h1>
+            <p class="text-center text-green-100">Website Penyuluhan Pertanian Kabupaten Kebumen</p>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Table of Contents -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">📋 Daftar Isi</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="font-semibold text-green-600 mb-2">Bagian 1: Penggunaan Website</h3>
+                    <ul class="space-y-1 text-sm text-gray-600">
+                        <li><a href="#navigasi" class="hover:text-green-600">• Navigasi Utama</a></li>
+                        <li><a href="#fitur-utama" class="hover:text-green-600">• Fitur-Fitur Utama</a></li>
+                        <li><a href="#detail-bpp" class="hover:text-green-600">• Melihat Detail BPP</a></li>
+                        <li><a href="#mobile" class="hover:text-green-600">• Penggunaan di Mobile</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-green-600 mb-2">Bagian 2: Input Data Google Sheets</h3>
+                    <ul class="space-y-1 text-sm text-gray-600">
+                        <li><a href="#setup-sheets" class="hover:text-green-600">• Setup Google Sheets</a></li>
+                        <li><a href="#format-data" class="hover:text-green-600">• Format Data yang Benar</a></li>
+                        <li><a href="#publish-sheets" class="hover:text-green-600">• Publish ke Web</a></li>
+                        <li><a href="#troubleshooting" class="hover:text-green-600">• Troubleshooting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian 1: Penggunaan Website -->
+        <section id="navigasi" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">🌐 Bagian 1: Penggunaan Website</h2>
+            
+            <!-- Navigasi Utama -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="step-number">1</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Navigasi Utama</h3>
+                </div>
+                
+                <div class="mockup-browser mb-4">
+                    <div class="mockup-browser-toolbar">
+                        <div class="mockup-dot bg-red-500"></div>
+                        <div class="mockup-dot bg-yellow-500"></div>
+                        <div class="mockup-dot bg-green-500"></div>
+                        <span class="text-sm text-gray-600 ml-4">penyuluhan-kebumen.vercel.app</span>
+                    </div>
+                    <div class="mockup-content">
+                        <!-- Navbar Mockup -->
+                        <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-4 rounded mb-4">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                        <span class="text-green-600 font-bold text-sm">🌾</span>
+                                    </div>
+                                    <span class="font-bold">Penyuluhan Pertanian</span>
+                                </div>
+                                <div class="hidden md:flex gap-6">
+                                    <span class="hover:text-green-200 cursor-pointer border-b-2 border-white">Beranda</span>
+                                    <span class="hover:text-green-200 cursor-pointer">Profil</span>
+                                    <span class="hover:text-green-200 cursor-pointer">BPP</span>
+                                    <span class="hover:text-green-200 cursor-pointer">Kontak</span>
+                                </div>
+                                <div class="md:hidden">
+                                    <div class="w-6 h-6 flex flex-col justify-center gap-1">
+                                        <div class="w-full h-0.5 bg-white"></div>
+                                        <div class="w-full h-0.5 bg-white"></div>
+                                        <div class="w-full h-0.5 bg-white"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="highlight-box p-4 rounded-lg">
+                        <h4 class="font-semibold text-amber-800 mb-2">Menu Navigasi:</h4>
+                        <ul class="text-sm text-amber-700 space-y-1">
+                            <li><strong>Beranda:</strong> Halaman utama dengan tabel kegiatan</li>
+                            <li><strong>Profil:</strong> Informasi Dinas Penyuluhan</li>
+                            <li><strong>BPP:</strong> Toggle sidebar daftar BPP</li>
+                            <li><strong>Kontak:</strong> Scroll ke bagian kontak</li>
+                        </ul>
+                    </div>
+                    <div class="success-box p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-2">Fitur Navbar:</h4>
+                        <ul class="text-sm text-green-700 space-y-1">
+                            <li>✅ Sticky navbar (tetap terlihat saat scroll)</li>
+                            <li>✅ Responsive design untuk mobile</li>
+                            <li>✅ Hamburger menu di mobile</li>
+                            <li>✅ Smooth scrolling ke section</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fitur Utama -->
+            <div id="fitur-utama" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="step-number">2</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Fitur-Fitur Utama</h3>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <!-- Tabel Kegiatan -->
+                    <div class="lg:col-span-2">
+                        <h4 class="font-semibold text-gray-700 mb-3">Tabel Kegiatan Utama</h4>
+                        <div class="mockup-browser">
+                            <div class="mockup-browser-toolbar">
+                                <div class="mockup-dot bg-red-500"></div>
+                                <div class="mockup-dot bg-yellow-500"></div>
+                                <div class="mockup-dot bg-green-500"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="p-2 text-left">No</th>
+                                                <th class="p-2 text-left">Waktu</th>
+                                                <th class="p-2 text-left">Kegiatan</th>
+                                                <th class="p-2 text-left">BPP</th>
+                                                <th class="p-2 text-left">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b">
+                                                <td class="p-2">1</td>
+                                                <td class="p-2">15/01/2024</td>
+                                                <td class="p-2">Penyuluhan Budidaya Padi</td>
+                                                <td class="p-2">BPP Sukamaju</td>
+                                                <td class="p-2"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Selesai</span></td>
+                                            </tr>
+                                            <tr class="border-b">
+                                                <td class="p-2">2</td>
+                                                <td class="p-2">18/01/2024</td>
+                                                <td class="p-2">Pelatihan Pupuk Organik</td>
+                                                <td class="p-2">BPP Sejahtera</td>
+                                                <td class="p-2"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Berlangsung</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar BPP -->
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-3">Sidebar BPP</h4>
+                        <div class="mockup-browser">
+                            <div class="mockup-browser-toolbar">
+                                <div class="mockup-dot bg-red-500"></div>
+                                <div class="mockup-dot bg-yellow-500"></div>
+                                <div class="mockup-dot bg-green-500"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mb-3">
+                                    <input type="text" placeholder="Cari BPP..." class="w-full p-2 border rounded text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="p-3 bg-green-50 border-l-4 border-green-500 rounded cursor-pointer">
+                                        <div class="font-medium text-sm">BPP Sukamaju</div>
+                                        <div class="text-xs text-gray-600">5 kegiatan</div>
+                                    </div>
+                                    <div class="p-3 bg-gray-50 border-l-4 border-gray-300 rounded cursor-pointer hover:bg-gray-100">
+                                        <div class="font-medium text-sm">BPP Sejahtera</div>
+                                        <div class="text-xs text-gray-600">3 kegiatan</div>
+                                    </div>
+                                    <div class="p-3 bg-gray-50 border-l-4 border-gray-300 rounded cursor-pointer hover:bg-gray-100">
+                                        <div class="font-medium text-sm">BPP Mandiri</div>
+                                        <div class="text-xs text-gray-600">2 kegiatan</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 highlight-box p-4 rounded-lg">
+                    <h4 class="font-semibold text-amber-800 mb-2">💡 Cara Menggunakan:</h4>
+                    <ol class="text-sm text-amber-700 space-y-1 list-decimal list-inside">
+                        <li>Tabel utama menampilkan semua kegiatan dari seluruh BPP</li>
+                        <li>Gunakan sidebar untuk mencari BPP tertentu</li>
+                        <li>Klik nama BPP di sidebar untuk melihat detail dan kegiatan spesifik</li>
+                        <li>Status kegiatan ditampilkan dengan warna berbeda (hijau=selesai, biru=berlangsung, kuning=direncanakan)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Detail BPP -->
+            <div id="detail-bpp" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="step-number">3</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Melihat Detail BPP</h3>
+                </div>
+
+                <div class="mockup-browser mb-4">
+                    <div class="mockup-browser-toolbar">
+                        <div class="mockup-dot bg-red-500"></div>
+                        <div class="mockup-dot bg-yellow-500"></div>
+                        <div class="mockup-dot bg-green-500"></div>
+                    </div>
+                    <div class="mockup-content">
+                        <!-- Header Detail BPP -->
+                        <div class="flex items-center gap-3 mb-4">
+                            <button class="bg-gray-100 hover:bg-gray-200 p-2 rounded">← Kembali</button>
+                            <h2 class="text-xl font-bold">BPP Sukamaju</h2>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Info BPP -->
+                            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg">
+                                <h3 class="font-semibold text-green-800 mb-3">Informasi BPP</h3>
+                                <div class="space-y-2 text-sm">
+                                    <div><strong>Alamat:</strong> Jl. Raya Sukamaju No. 15</div>
+                                    <div><strong>Kontak:</strong> 081234567890</div>
+                                </div>
+                            </div>
+
+                            <!-- Tim BPP -->
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg">
+                                <h3 class="font-semibold text-blue-800 mb-3">Tim BPP</h3>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span>Koordinator</span>
+                                        <span class="font-medium">Budi Santoso</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>POPT</span>
+                                        <span class="font-medium">Ahmad Fauzi</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Penyuluh</span>
+                                        <span class="font-medium">Siti Rahayu</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tabel Kegiatan BPP -->
+                        <div class="mt-6">
+                            <h3 class="font-semibold text-gray-800 mb-3">Kegiatan BPP Sukamaju</h3>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm border">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="p-2 text-left border">Tanggal</th>
+                                            <th class="p-2 text-left border">Kegiatan</th>
+                                            <th class="p-2 text-left border">Lokasi</th>
+                                            <th class="p-2 text-left border">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-2 border">15/01/2024</td>
+                                            <td class="p-2 border">Penyuluhan Budidaya Padi</td>
+                                            <td class="p-2 border">Balai Desa Sukamaju</td>
+                                            <td class="p-2 border"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Selesai</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-box p-4 rounded-lg">
+                    <h4 class="font-semibold text-green-800 mb-2">✨ Fitur Detail BPP:</h4>
+                    <ul class="text-sm text-green-700 space-y-1">
+                        <li>• Informasi lengkap BPP (alamat, kontak)</li>
+                        <li>• Daftar tim: Koordinator, POPT, dan Penyuluh</li>
+                        <li>• Tabel kegiatan khusus BPP tersebut</li>
+                        <li>• Tombol kembali ke halaman utama</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile Usage -->
+            <div id="mobile" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="step-number">4</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Penggunaan di Mobile</h3>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Mobile Navbar -->
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-3">Mobile Navigation</h4>
+                        <div class="w-64 mx-auto bg-gray-900 rounded-lg p-1">
+                            <div class="bg-white rounded-lg p-3">
+                                <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-3 rounded mb-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-sm">Penyuluhan</span>
+                                        <div class="w-5 h-5 flex flex-col justify-center gap-0.5">
+                                            <div class="w-full h-0.5 bg-white"></div>
+                                            <div class="w-full h-0.5 bg-white"></div>
+                                            <div class="w-full h-0.5 bg-white"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-gray-600 p-2">
+                                    Tap hamburger menu untuk navigasi
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Table -->
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-3">Mobile Table</h4>
+                        <div class="w-64 mx-auto bg-gray-900 rounded-lg p-1">
+                            <div class="bg-white rounded-lg p-3">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-xs">
+                                        <thead>
+                                            <tr class="bg-gray-50">
+                                                <th class="p-1">Waktu</th>
+                                                <th class="p-1">Kegiatan</th>
+                                                <th class="p-1">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b">
+                                                <td class="p-1">15/01</td>
+                                                <td class="p-1">Penyuluhan...</td>
+                                                <td class="p-1"><span class="bg-green-100 text-green-800 px-1 rounded text-xs">✓</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-xs text-gray-600 p-2 text-center">
+                                    Scroll horizontal untuk melihat semua kolom
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scroll to Top -->
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-3">Scroll to Top</h4>
+                        <div class="w-64 mx-auto bg-gray-900 rounded-lg p-1">
+                            <div class="bg-white rounded-lg p-3 relative h-32">
+                                <div class="text-xs text-gray-600 mb-2">Konten panjang...</div>
+                                <div class="absolute bottom-2 right-2">
+                                    <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg">
+                                        ↑
+                                    </div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-8">
+                                    Tombol muncul saat scroll ke bawah
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 highlight-box p-4 rounded-lg">
+                    <h4 class="font-semibold text-amber-800 mb-2">📱 Tips Mobile:</h4>
+                    <ul class="text-sm text-amber-700 space-y-1">
+                        <li>• Gunakan hamburger menu (☰) untuk navigasi</li>
+                        <li>• Scroll horizontal pada tabel untuk melihat semua kolom</li>
+                        <li>• Tap tombol panah (↑) untuk kembali ke atas</li>
+                        <li>• Sidebar BPP otomatis menyesuaikan ukuran layar</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 2: Google Sheets -->
+        <section id="setup-sheets" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">📊 Bagian 2: Input Data Google Sheets</h2>
+
+            <!-- Setup Google Sheets -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="step-number">1</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Setup Google Sheets</h3>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <!-- Sheet Kegiatan -->
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-3">Sheet 1: Data Kegiatan</h4>
+                        <div class="mockup-browser">
+                            <div class="mockup-browser-toolbar">
+                                <div class="mockup-dot bg-red-500"></div>
+                                <div class="mockup-dot bg-yellow-500"></div>
+                                <div class="mockup-dot bg-green-500"></div>
+                                <span class="text-sm text-gray-600 ml-4">sheets.google.com</span>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mb-2">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Sheet: Kegiatan</span>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-xs border">
+                                        <thead class="bg-green-50">
+                                            <tr>
+                                                <th class="p-2 border font-semibold">Waktu</th>
+                                                <th class="p-2 border font-semibold">Kegiatan</th>
+                                                <th class="p-2 border font-semibold">Lokasi</th>
+                                                <th class="p-2 border font-semibold">BPP</th>
+                                                <th class="p-2 border font-semibold">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="p-2 border">15/01/2024</td>
+                                                <td class="p-2 border">Penyuluhan Budidaya Padi</td>
+                                                <td class="p-2 border">Balai Desa Sukamaju</td>
+                                                <td class="p-2 border">BPP Sukamaju</td>
+                                                <td class="p-2 border">Selesai</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border">18/01/2024</td>
+                                                <td class="p-2 border">Pelatihan Pupuk Organik</td>
+                                                <td class="p-2 border">Aula BPP Sejahtera</td>
+                                                <td class="p-2 border">BPP Sejahtera</td>
+                                                <td class="p-2 border">Berlangsung</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sheet BPP -->
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-3">Sheet 2: Data BPP</h4>
+                        <div class="mockup-browser">
+                            <div class="mockup-browser-toolbar">
+                                <div class="mockup-dot bg-red-500"></div>
+                                <div class="mockup-dot bg-yellow-500"></div>
+                                <div class="mockup-dot bg-green-500"></div>
+                                <span class="text-sm text-gray-600 ml-4">sheets.google.com</span>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mb-2">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">Sheet: BPP</span>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-xs border">
+                                        <thead class="bg-blue-50">
+                                            <tr>
+                                                <th class="p-1 border font-semibold">Nama BPP</th>
+                                                <th class="p-1 border font-semibold">Alamat</th>
+                                                <th class="p-1 border font-semibold">Koordinator</th>
+                                                <th class="p-1 border font-semibold">Kontak</th>
+                                                <th class="p-1 border font-semibold">POPT</th>
+                                                <th class="p-1 border font-semibold">Penyuluh</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="p-1 border">BPP Sukamaju</td>
+                                                <td class="p-1 border">Jl. Raya Sukamaju No. 15</td>
+                                                <td class="p-1 border">Budi Santoso</td>
+                                                <td class="p-1 border">081234567890</td>
+                                                <td class="p-1 border">Ahmad Fauzi</td>
+                                                <td class="p-1 border">Siti Rahayu, Andi Wijaya</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 warning-box p-4 rounded-lg">
+                    <h4 class="font-semibold text-red-800 mb-2">⚠️ Penting - Konsistensi Data:</h4>
+                    <ul class="text-sm text-red-700 space-y-1">
+                        <li>• <strong>Nama BPP</strong> harus sama persis di kedua sheet</li>
+                        <li>• <strong>Format tanggal</strong> konsisten (DD/MM/YYYY)</li>
+                        <li>• <strong>Tidak ada spasi ekstra</strong> di awal/akhir nama</li>
+                        <li>• <strong>Multiple data</strong> dipisah koma (contoh: "Siti Rahayu, Andi Wijaya")</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Format Data -->
+            <div id="format-data" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="step-number">2</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Format Data yang Benar</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Format Benar -->
+                    <div class="success-box p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-3">✅ Format BENAR</h4>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <strong class="text-green-700">Tanggal:</strong>
+                                <div class="bg-white p-2 rounded border mt-1">
+                                    <code>15/01/2024</code><br>
+                                    <code>01/02/2024</code><br>
+                                    <code>28/12/2024</code>
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="text-green-700">Nama BPP:</strong>
+                                <div class="bg-white p-2 rounded border mt-1">
+                                    <code>BPP Sukamaju</code><br>
+                                    <code>BPP Sejahtera</code><br>
+                                    <code>BPP Mandiri</code>
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="text-green-700">Multiple Penyuluh:</strong>
+                                <div class="bg-white p-2 rounded border mt-1">
+                                    <code>Siti Rahayu, Andi Wijaya</code><br>
+                                    <code>Bambang Sutrisno, Eko Prasetyo</code>
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="text-green-700">Status:</strong>
+                                <div class="bg-white p-2 rounded border mt-1">
+                                    <code>Selesai</code><br>
+                                    <code>Berlangsung</code><br>
+                                    <code>Direncanakan</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Format Salah -->
+                    <div class="warning-box p-4 rounded-lg">
+                        <h4 class="font-semibold text-red-800 mb-3">❌ Format SALAH</h4>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <strong class="text-red-700">Tanggal:</strong>
+                                <div class="bg-white p-2 rounded border mt-1">
+                                    <code class="line-through">2024-01-15</code> (format salah)<br>
+                                    <code class="line-through">15 Januari 2024</code> (format salah)<br>
+                                    <code class="line-through">15/1/24</code> (tahun tidak lengkap)
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="text-red-700">Nama BPP:</strong>
+                                <div class="bg-white p-2 rounded border mt-1">
+                                    <code class="line-through"> BPP Sukamaju</code> (spasi di awal)<br>
+                                    <code class="line-through">BPP Sukamaju </code> (spasi di akhir)<br>
+                                    <code class="line-through">bpp sukamaju</code> (huruf kecil)
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="text-red-700">Multiple Penyuluh:</strong>
+                                <div class="bg-white p-2 rounded border mt-1">
+                                    <code class="line-through">Siti Rahayu; Andi Wijaya</code> (pakai ;)<br>
+                                    <code class="line-through">Siti Rahayu dan Andi Wijaya</code> (pakai "dan")
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="text-red-700">Status:</strong>
+                                <div class="bg-white p-2 rounded border mt-1">
+                                    <code class="line-through">Done</code> (bahasa Inggris)<br>
+                                    <code class="line-through">SELESAI</code> (huruf besar semua)<br>
+                                    <code class="line-through">sudah selesai</code> (tidak standar)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publish Sheets -->
+            <div id="publish-sheets" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="step-number">3</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Publish Google Sheets ke Web</h3>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Step 1 -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-2">Buka Menu File → Share → Publish to web</h4>
+                            <div class="mockup-browser">
+                                <div class="mockup-browser-toolbar">
+                                    <div class="mockup-dot bg-red-500"></div>
+                                    <div class="mockup-dot bg-yellow-500"></div>
+                                    <div class="mockup-dot bg-green-500"></div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">File</span>
+                                            <span>→</span>
+                                            <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Share</span>
+                                            <span>→</span>
+                                            <span class="bg-orange-600 text-white px-2 py-1 rounded text-xs">Publish to web</span>
+                                        </div>
+                                        <div class="text-sm text-gray-600">Klik menu File, pilih Share, lalu Publish to web</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-2">Pilih Sheet dan Format CSV</h4>
+                            <div class="mockup-browser">
+                                <div class="mockup-browser-toolbar">
+                                    <div class="mockup-dot bg-red-500"></div>
+                                    <div class="mockup-dot bg-yellow-500"></div>
+                                    <div class="mockup-dot bg-green-500"></div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="bg-gray-50 p-4 rounded">
+                                        <div class="mb-3">
+                                            <label class="block text-sm font-medium mb-1">Sheet to publish:</label>
+                                            <select class="w-full p-2 border rounded">
+                                                <option>Kegiatan</option>
+                                                <option>BPP</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="block text-sm font-medium mb-1">Format:</label>
+                                            <select class="w-full p-2 border rounded">
+                                                <option selected>Comma-separated values (.csv)</option>
+                                                <option>Web page</option>
+                                            </select>
+                                        </div>
+                                        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Publish</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-2">Copy URL yang Dihasilkan</h4>
+                            <div class="mockup-browser">
+                                <div class="mockup-browser-toolbar">
+                                    <div class="mockup-dot bg-red-500"></div>
+                                    <div class="mockup-dot bg-yellow-500"></div>
+                                    <div class="mockup-dot bg-green-500"></div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="bg-gray-50 p-4 rounded">
+                                        <div class="mb-2">
+                                            <label class="block text-sm font-medium mb-1">Published URL:</label>
+                                            <div class="flex gap-2">
+                                                <input type="text" value="https://docs.google.com/spreadsheets/d/1ABC...&output=csv" class="flex-1 p-2 border rounded bg-white text-sm" readonly>
+                                                <button class="bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 text-sm">Copy</button>
+                                            </div>
+                                        </div>
+                                        <div class="text-xs text-gray-600">
+                                            ✅ Pastikan URL berakhiran <code>&output=csv</code>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-2">Update URL di Website</h4>
+                            <div class="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
+                                <div class="text-gray-500">// Di file index.html, bagian konfigurasi:</div>
+                                <div class="mt-2">
+                                    <span class="text-blue-400">const</span> config = {<br>
+                                    &nbsp;&nbsp;activitiesSheetUrl: <span class="text-yellow-400">'URL_SHEET_KEGIATAN_ANDA'</span>,<br>
+                                    &nbsp;&nbsp;bppSheetUrl: <span class="text-yellow-400">'URL_SHEET_BPP_ANDA'</span><br>
+                                    };
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 success-box p-4 rounded-lg">
+                    <h4 class="font-semibold text-green-800 mb-2">✅ Checklist Publish:</h4>
+                    <ul class="text-sm text-green-700 space-y-1">
+                        <li>☐ Sheet sudah dipublish dengan format CSV</li>
+                        <li>☐ URL berakhiran <code>&output=csv</code></li>
+                        <li>☐ URL sudah diupdate di konfigurasi website</li>
+                        <li>☐ Data test sudah diinput dengan format yang benar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div id="troubleshooting" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="step-number">4</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Troubleshooting</h3>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Debug Panel -->
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-3">Menggunakan Debug Panel</h4>
+                        <div class="mockup-browser">
+                            <div class="mockup-browser-toolbar">
+                                <div class="mockup-dot bg-red-500"></div>
+                                <div class="mockup-dot bg-yellow-500"></div>
+                                <div class="mockup-dot bg-green-500"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="fixed bottom-4 right-4 bg-white border shadow-lg rounded-lg p-3 w-64">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-semibold text-sm">Debug Panel</h3>
+                                        <button class="text-gray-400 hover:text-gray-600">×</button>
+                                    </div>
+                                    <div class="space-y-2 text-xs">
+                                        <div class="flex justify-between">
+                                            <span>Activities:</span>
+                                            <span class="text-green-600">✅ Loaded (15)</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>BPPs:</span>
+                                            <span class="text-red-600">❌ Failed</span>
+                                        </div>
+                                        <div class="flex gap-2 mt-2">
+                                            <button class="bg-blue-500 text-white px-2 py-1 rounded text-xs">Refresh</button>
+                                            <button class="bg-gray-500 text-white px-2 py-1 rounded text-xs">Show Columns</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Common Issues -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="warning-box p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-3">❌ Masalah Umum</h4>
+                            <div class="space-y-3 text-sm text-red-700">
+                                <div>
+                                    <strong>Data tidak muncul:</strong>
+                                    <ul class="list-disc list-inside ml-2 mt-1">
+                                        <li>URL Google Sheets salah</li>
+                                        <li>Sheet belum dipublish</li>
+                                        <li>Format URL bukan CSV</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Data "undefined":</strong>
+                                    <ul class="list-disc list-inside ml-2 mt-1">
+                                        <li>Nama kolom tidak sesuai</li>
+                                        <li>Ada spasi ekstra di header</li>
+                                        <li>Format data tidak konsisten</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>BPP tidak bisa diklik:</strong>
+                                    <ul class="list-disc list-inside ml-2 mt-1">
+                                        <li>Data BPP belum termuat</li>
+                                        <li>JavaScript error</li>
+                                        <li>Nama BPP tidak match</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="success-box p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-3">✅ Solusi</h4>
+                            <div class="space-y-3 text-sm text-green-700">
+                                <div>
+                                    <strong>Cek URL:</strong>
+                                    <ul class="list-disc list-inside ml-2 mt-1">
+                                        <li>Pastikan berakhiran <code>&output=csv</code></li>
+                                        <li>Test buka URL di browser baru</li>
+                                        <li>Harus menampilkan data CSV</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Cek Format Data:</strong>
+                                    <ul class="list-disc list-inside ml-2 mt-1">
+                                        <li>Header sesuai panduan</li>
+                                        <li>Tidak ada spasi ekstra</li>
+                                        <li>Nama BPP konsisten</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Gunakan Debug Panel:</strong>
+                                    <ul class="list-disc list-inside ml-2 mt-1">
+                                        <li>Klik "Show Available Columns"</li>
+                                        <li>Bandingkan dengan yang diharapkan</li>
+                                        <li>Refresh data jika perlu</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg p-6 text-center">
+            <h3 class="text-xl font-bold mb-2">Selamat Menggunakan! 🎉</h3>
+            <p class="text-green-100 mb-4">Website Penyuluhan Pertanian Kabupaten Kebumen siap digunakan</p>
+            <div class="flex justify-center gap-4 text-sm">
+                <span>📧 Kontak: penyuluhan@kebumenkab.go.id</span>
+                <span>📞 Telepon: (0287) 381234</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-to-top button
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '↑';
+        scrollToTopBtn.className = 'fixed bottom-4 right-4 bg-green-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 opacity-0 pointer-events-none';
+        scrollToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.body.appendChild(scrollToTopBtn);
+
+        // Show/hide scroll-to-top button
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.opacity = '1';
+                scrollToTopBtn.style.pointerEvents = 'auto';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+                scrollToTopBtn.style.pointerEvents = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
